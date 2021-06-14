@@ -6,17 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import Hrms.Hrms.business.abstratcs.JobPositionService;
-import Hrms.Hrms.dataAccess.abstratcs.JobDao;
+import Hrms.Hrms.dataAccess.abstratcs.JobPositionDao;
 import Hrms.Hrms.entities.concretes.JobPosition;
 
 @Service
 public class JobPositionManager implements JobPositionService {
 
-	private JobDao jobDao;
+	private JobPositionDao jobDao;
 	
 	@Autowired
 	//
-	public JobPositionManager(JobDao jobDao) {
+	public JobPositionManager(JobPositionDao jobDao) {
 		super();
 		this.jobDao = jobDao;
 	}
