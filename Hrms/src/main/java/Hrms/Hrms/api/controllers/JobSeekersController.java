@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Hrms.Hrms.business.abstratcs.JobSeekerService;
+import Hrms.Hrms.core.results.DataResult;
 import Hrms.Hrms.entities.concretes.JobSeeker;
 
 @RestController
@@ -19,13 +20,13 @@ public class JobSeekersController {
 		super();
 		this.jobSeekerService = jobSeekerService;
 	}
-	public List<JobSeeker> getAll(){
+	public DataResult<List<JobSeeker>> getAll(){
 		return this.jobSeekerService.getAll();
 	}
-	public List<JobSeeker> findByIdentityNumber(String identityNumber){
+	public DataResult<List<JobSeeker>> findByIdentityNumber(String identityNumber){
 		return this.jobSeekerService.findByIdentityNumber(identityNumber);
 	}
-	public List<JobSeeker> findByEmail(String email){
+	public DataResult<List<JobSeeker>> findByEmail(String email){
 		return this.jobSeekerService.findByEmail(email);
 	}
 
